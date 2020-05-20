@@ -31,7 +31,7 @@ If you are interested in reading about Ad-Hoc networks and OLSR, here are some r
 
 Files for the RPi:
 
-- `config_ad_hoc.sh` : configuration for ad_hoc network on your wireless interface. The provided script does this on wlan1. 
+- `config_ad_hoc.sh` : configuration for ad_hoc network on your wireless interface. The provided script does this on wlan0. 
 make sure to change the IP address for each unique device in this file
 
 - `start_olsrd.sh` : Once you have configured your interface using config_ad_hoc.sh, you can run this to start olsrd
@@ -96,9 +96,9 @@ After plugging in the WiFi dongle, run the command
 
 	iwconfig
 
-On my RPi 3B+, a new wireless interface showed up: wlan1. This is what I used in all of my configuration files
+On my RPi 3B+, a new wireless interface showed up: wlan0. This is what I used in all of my configuration files
 
-NOTE: If your USB dongle wireless interface is not wlan1, you will need to edit basically all of the files that I have attached here. Just replace wlan1 with the name of your wireless interface. 
+NOTE: If your USB dongle wireless interface is not wlan0, you will need to edit basically all of the files that I have attached here. Just replace wlan0 with the name of your wireless interface. 
 
 **Step 5: Copy the Shell Scripts onto your Raspberry Pi**
 You can do this using scp, an scp helper like FileZilla, or by creating the files and copy pasting my files into your RPi.
@@ -168,4 +168,4 @@ You are all done, you should see this screen:
 To reconnect to your home wifi network, run the restart_networking shell scripts. 
 
 If you want to see multi-hopping work without having to go too far, you can decrease the Tx Power on your wifi antenna using the following command:
-iwconfig wlan1 txpower 0
+iwconfig wlan0 txpower 0
